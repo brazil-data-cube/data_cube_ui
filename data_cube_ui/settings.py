@@ -43,7 +43,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'j^rq-8z4l+b0cf(h3&+vjbz(bq3(d_-)h@==3vf&pz4wvz%xoh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -59,7 +59,6 @@ LOCAL_USER = os.environ.get('USER', 'localuser')
 
 INSTALLED_APPS = [
     'apps.accounts',
-    'apps.cloud_coverage',
     'apps.coastal_change',
     'apps.custom_mosaic_tool',
     'apps.data_cube_manager',
@@ -68,8 +67,8 @@ INSTALLED_APPS = [
     'apps.ndvi_anomaly',
     'apps.pages',
     'apps.slip',
-    'apps.spectral_anomaly',
     'apps.spectral_indices',
+    'apps.cloud_coverage',
     'apps.task_manager',
     'apps.tsm',
     'apps.urbanization',
@@ -154,6 +153,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=agdc'
         },
+        'HOST': db_host,
         'NAME': db_name,
         'USER': db_user,
         'PASSWORD': db_pass,
@@ -196,8 +196,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/static/'
+STATIC_UI_URL = '/datacube/ui_results'
+STATIC_UI_ROOT = '/datacube/ui_results'
 
 STATICFILES_DIRS = [
+    '/app/static',
+    '/datacube/ui_results',
     '/home/' + LOCAL_USER + '/Datacube/data_cube_ui/static',
 ]
 

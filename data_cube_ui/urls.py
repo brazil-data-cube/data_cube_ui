@@ -48,7 +48,6 @@ urlpatterns = [
     url(r'^coastal_change/', include('apps.coastal_change.urls')),
     url(r'^ndvi_anomaly/', include('apps.ndvi_anomaly.urls')),
     url(r'^spectral_indices/', include('apps.spectral_indices.urls')),
-    url(r'^spectral_anomaly/', include('apps.spectral_anomaly.urls')),
     url(r'^cloud_coverage/', include('apps.cloud_coverage.urls')),
     url(r'^urbanization/', include('apps.urbanization.urls')),
     url(r'^task_manager/', include('apps.task_manager.urls')),
@@ -56,4 +55,5 @@ urlpatterns = [
     url(r'^accounts/', include('apps.accounts.urls')),
     url(r'^', include('apps.pages.urls')),
 ] + static(
-    settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    settings.STATIC_URL, document_root=settings.STATIC_ROOT) + \
+    static(settings.STATIC_UI_URL, document_root=settings.STATIC_UI_ROOT)
