@@ -38,6 +38,8 @@ Follow the instructions in the [Open Data Cube Indexing and Ingestion Guide](doc
 to learn how to index and ingest data for an Open Data Cube installation - particularly
 for the ODC UI.
 
+> Note: In this fork, the use of the Docker is recommended. If you want to use it manually, it will be necessary to change the files that describe Apache's paths. For more information, consult the [official documentation](https://github.com/ceos-seo/data_cube_ui/blob/72dd9eb05d7c6747892ef8d427475b0dcc0064df/docs/ui_install.md#-configuring-the-server).
+
 Obtaining Help
 =================
 If you encounter issues that are not documented in the documents linked to above or 
