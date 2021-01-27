@@ -10,9 +10,10 @@ from celery.utils.log import get_task_logger
 from celery.decorators import periodic_task
 from celery.task.schedules import crontab
 from datacube.index import index_connect
-from datacube.executor import SerialExecutor
+from datacube.executor import SerialExecutor, get_executor
 from datacube.config import LocalConfig
 from datacube.scripts import ingest
+import apps.data_cube_manager.dc_ingest as dc_ingest
 
 import uuid
 import os
@@ -89,7 +90,7 @@ def run_ingestion(ingestion_definition):
     conf_path = '/home/' + settings.LOCAL_USER + '/Datacube/data_cube_ui/config/.datacube.conf'
     index = index_connect(local_config=LocalConfig.find([conf_path]))
 
-    source_type, output_type = ingest.make_output_type(index, ingestion_definition)
+    source_type, output_type = dc_ingest.make_output_type(index, ingestion_definition)
     ingestion_work.delay(output_type, source_type, ingestion_definition)
 
     index.close()

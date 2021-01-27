@@ -617,28 +617,6 @@
   },
   {
     "model": "dc_algorithm.application",
-    "pk": "spectral_anomaly",
-    "fields": {
-      "name": "Spectral Anomaly",
-      "color_scale": null,
-      "application_group": 2,
-      "areas": [
-        "lake_chad_full",
-        "ghana",
-        "kenya",
-        "lake_baringo",
-        "togo",
-        "uruguay"
-      ],
-      "satellites": [
-        1,
-        2,
-        3
-      ]
-    }
-  },
-  {
-    "model": "dc_algorithm.application",
     "pk": "spectral_indices",
     "fields": {
       "name": "Spectral Indices",
@@ -809,56 +787,6 @@
       "image_path": "/static/assets/images/thumbnails/fractional_cover_3.png",
       "image_title": "Downloads",
       "image_description": "All products (both data and images) are available for download in various formats, including GeoTIFF, NetCDF, and PNG."
-    }
-  },
-  {
-    "model": "spectral_anomaly.toolinfo",
-    "pk": 1,
-    "fields": {
-      "image_path": "/static/assets/images/thumbnails/spectral_anomaly_1.png",
-      "image_title": "Determine Changes in Spectral Indices",
-      "image_description": "Determine the amount of change in various spectral indices between two time periods. Red indicates negative change, yellow indicates no change, and green indicates positive change."
-    }
-  },
-  {
-    "model": "spectral_anomaly.toolinfo",
-    "pk": 2,
-    "fields": {
-      "image_path": "/static/assets/images/thumbnails/spectral_anomaly_2.png",
-      "image_title": "Detect Anomalies",
-      "image_description": "Specify a change value range to threshold on. Values outside the range will be colored black. Values inside the range will be colored red."
-    }
-  },
-  {
-    "model": "spectral_anomaly.resulttype",
-    "pk": 1,
-    "fields": {
-      "result_id": "ndvi",
-      "name": "NDVI"
-    }
-  },
-  {
-    "model": "spectral_anomaly.resulttype",
-    "pk": 2,
-    "fields": {
-      "result_id": "ndbi",
-      "name": "NDBI"
-    }
-  },
-  {
-    "model": "spectral_anomaly.resulttype",
-    "pk": 3,
-    "fields": {
-      "result_id": "ndwi",
-      "name": "NDWI"
-    }
-  },
-  {
-    "model": "spectral_anomaly.resulttype",
-    "pk": 5,
-    "fields": {
-      "result_id": "fractional_cover",
-      "name": "Fractional Cover"
     }
   },
   {

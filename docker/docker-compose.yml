@@ -1,0 +1,33 @@
+version: '3'
+services:
+  ui:
+    environment:
+      - ADMIN_EMAIL=${ADMIN_EMAIL}
+      - DB_HOSTNAME=${DB_HOSTNAME}
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_PORT=${DB_PORT}
+      - PORT=${PORT}
+    command: python3 manage.py runserver 0.0.0.0:${PORT}
+    build:
+      dockerfile: docker/ui/Dockerfile
+      context: ..
+      args:
+        ADMIN_EMAIL: ${ADMIN_EMAIL}
+        DB_HOSTNAME: ${DB_HOSTNAME}
+        DB_DATABASE: ${DB_DATABASE}
+        DB_USER: ${DB_USER}
+        DB_PASSWORD: ${DB_PASSWORD}
+        DB_PORT: ${DB_PORT}
+        PORT: ${PORT}
+    ports:
+    - "${PORT}:${PORT}"
+    volumes:
+    - ..:/app
+    networks:
+      - bdc-odc-net
+
+networks:
+  bdc-odc-net:
+    external: true
